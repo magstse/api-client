@@ -194,6 +194,11 @@ an ad object you format a request like `/image_ad/MD5_HASH/`, where `MD5_HASH`
 is the ad's unique MD5 hash identifier.  _Please note that an attribute field 
 is not required to request an ad object._
 
+When you receive data for a banner or flash ad, there will be a filename 
+included along with the dimensions of the ad.  To retrieve the actual image
+or SWF file, prefix the filename with `http://assets.whatrunswhere.com/banners/`
+and make an HTTP `GET` request for the file.
+
 ### Ad Landing Pages
 The only valid attribute for a specific request to an ad object is 
 `landing_pages`.  The request should look like `/image_ad/MD5_HASH/landing_pages`. 
