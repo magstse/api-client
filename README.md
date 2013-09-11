@@ -14,6 +14,14 @@ can be found in the account settings panel on the WRW web site.  Attempts
 to access the API without a valid API token are actively monitored.  To 
 obtain a new API token please contact customer service.
 
+Display vs. Mobile
+-------------------------------
+The main product, search.whatrunswhere.com, returns data for display and
+search advertising.  The mobile.whatrunswhere.com site returns data for
+Mobile Web and Android-based advertisements.  In order to use the mobile
+data, your account must be specifically authorized to do so.  The requests
+are of the same format as the display side, except the extra `mobile` 
+filter is used to indicate that you want mobile data for your query.
 
 Request Format
 -------------------------------
@@ -56,6 +64,7 @@ response.  The complete list of parameters is:
 + `network` - URL-encoded string of the ad network name
 + `from_ts` - Return only data newer than this UNIX timestamp
 + `until_ts` - Return only data older than this UNIX timestamp
++ `mobile` - "true" to seek mobile data; any other value is bypassed
 
 You can omit or submit as blank data any parameter that is not required.  For 
 example, the following parameters are valid:
