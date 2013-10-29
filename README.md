@@ -64,7 +64,7 @@ response.  The complete list of parameters is:
 + `network` - URL-encoded string of the ad network name
 + `from_ts` - Return only data newer than this UNIX timestamp
 + `until_ts` - Return only data older than this UNIX timestamp
-+ `mobile` - "true" to seek mobile data; any other value is bypassed
++ `mobile` - "true" to seek mobile data; any value other than "true" indicates "false"
 
 You can omit or submit as blank data any parameter that is not required.  For 
 example, the following parameters are valid:
