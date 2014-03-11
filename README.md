@@ -52,7 +52,7 @@ type.  To find out who is advertising on a domain, use the `publisher` resource.
 has its own resource type: `image_ad`, `flash_ad`, `text_ad`, `hybrid_ad`.
 
 
-Additional Parameters
+Additional Parameters ("Filters")
 -------------------------------
 Additional parameters are specified as standard HTTP parameters.  Some 
 parameters, like `token`, are always required.  However, there are also 
@@ -64,6 +64,8 @@ response.  The complete list of parameters is:
 + `network` - URL-encoded string of the ad network name
 + `from_ts` - Return only data newer than this UNIX timestamp
 + `until_ts` - Return only data older than this UNIX timestamp
++ `advertiser` - Return only data matching this advertiser (when searching by publisher)
++ `publisher` - Return only data matching this publisher/placement (when searching by advertiser)
 + `mobile` - "true" to seek mobile data; any value other than "true" indicates "false"
 
 You can omit or submit as blank data any parameter that is not required.  For 
@@ -72,6 +74,11 @@ example, the following parameters are valid:
 + `/advertiser/landingpage.com/text_ads?token=XXX`
 + `/advertiser/landingpage.com/text_ads?token=XXX&country=United%20States`
 + `/advertiser/landingpage.com/text_ads?token=XXX&country=`
+
+The `advertiser` and `publisher` filters are used to limit data to specific domains.  They
+can only be used opposite each other, i.e.:
++ `/advertiser/landingpage.com/text_ads?token=XXX&publisher=pagewithads.com`
++ `/publisher/apublisher.com/text_ads?token=XXX&advertiser=landingpage.com`
 
 However, the following requests are **not valid**, since they are missing the 
 required `token` parameter:
