@@ -220,3 +220,14 @@ The only valid attribute for a specific request to an ad object is
 `landing_pages`.  The request should look like `/image_ad/MD5_HASH/landing_pages`. 
 This will return a list of landing pages that were linked to by the advertiser 
 using this ad.
+
+
+
+Type-ahead / Autocompletion
+------------------------------
+Our autocomplete feature runs against specific calls that accept a "searchterm" parameter
+and return all matching domains.  API users can query this interface using the following:
+
++ `/typeahead/advertiser/?searchterm=my`
++ `/typeahead/publisher/?searchterm=my`
+
